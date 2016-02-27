@@ -17,7 +17,7 @@
 package apps
 
 import (
-	"github.com/beego/social-auth"
+	"github.com/thanzen/social-auth"
 )
 
 type Weibo struct {
