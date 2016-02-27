@@ -260,7 +260,7 @@ func (this *SocialAuth) handleAccess(ctx *context.Context) {
 }
 
 // save user social info and login the user
-func (this *SocialAuth) ConnectAndLogin(ctx *context.Context, socialType SocialType, uid int) (string, *UserSocial, error) {
+func (this *SocialAuth) ConnectAndLogin(ctx *context.Context, socialType SocialType, uid int64) (string, *UserSocial, error) {
 	tokKey := this.getSessKey(socialType, "token")
 
 	defer func() {

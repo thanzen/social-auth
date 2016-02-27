@@ -32,6 +32,6 @@ type Provider interface {
 
 // Interface of social utils
 type SocialAuther interface {
-	IsUserLogin(*context.Context) (int, bool)
-	LoginUser(*context.Context, int) (string, error)
+	IsUserLogin(*context.Context) (int64, bool)
+	LoginUser(*context.Context, int64) (string, error)
 }

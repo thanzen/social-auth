@@ -95,8 +95,8 @@ func (e *SocialTokenField) RawValue() interface{} {
 }
 
 type UserSocial struct {
-	Id       int
-	Uid      int              `orm:"index"`
+	Id       int64
+	Uid      int64              `orm:"index"`
 	Identify string           `orm:"size(200)"`
 	Type     SocialType       `orm:"index"`
 	Data     SocialTokenField `orm:"null"`
@@ -192,7 +192,7 @@ func UserSocials() orm.QuerySeter {
 }
 
 // Get UserSocials by uid
-func GetSocialsByUid(uid int, socialTypes ...SocialType) ([]*UserSocial, error) {
+func GetSocialsByUid(uid int64, socialTypes ...SocialType) ([]*UserSocial, error) {
 	var userSocials []*UserSocial
 	_, err := UserSocials().Filter("Uid", uid).Filter("Type__in", socialTypes).All(&userSocials)
 	if err != nil {
